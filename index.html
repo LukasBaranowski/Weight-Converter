@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <title>Weight Converter</title>
+    <style>
+        body {
+            margin-top: 80px;
+            background: #fff;
+            color: rgb(110, 110, 110);
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h1 class="display-4 text-center">Konwerter Wagi</h1>
+                <form>
+                    <div class="form-group">
+                        <input id="lbsInput"
+                        type="number"  class="form-control form-control-lg"
+                        placeholder="Wpisz Ilość Funtów">
+                    </div>
+                </form>
+                <div id="output">
+                    <div class="card mb-2">
+                        <div class="crad-block">
+                            <h5>Gramy:</h5>
+                            <div id="gramsOutput"></div>
+                        </div>
+                    </div>
+
+                    <div class="card mb-2">
+                        <div class="crad-block">
+                            <h5>Kilogramy:</h5>
+                            <div id="kgOutput"></div>
+                        </div>
+                    </div>
+
+                    <div class="card mb-2">
+                        <div class="crad-block">
+                            <h5>Uncje:</h5>
+                            <div id="ouncesOutput"></div>
+                        </div>
+                    </div>
+        <!---------------------------------------------->
+                    <form>
+                        <div class="form-group">
+                            <input id="kgInput"
+                            type="number"  class="form-control form-control-lg"
+                            placeholder="Wpisz Ilość Kilogramów">
+                        </div>
+                    </form>
+                    <div id="output">
+                        <div class="card mb-2">
+                            <div class="crad-block">
+                                <h5>Funty:</h5>
+                                <div id="lbsOutput"></div>
+                            </div>
+                        </div>
+    
+                        <div class="card mb-2">
+                            <div class="crad-block">
+                                <h5>Gramy:</h5>
+                                <div id="gramsOutput-2"></div>
+                            </div>
+                        </div>
+    
+                        <div class="card mb-2">
+                            <div class="crad-block">
+                                <h5>Uncje:</h5>
+                                <div id="ouncesOutput-2"></div>
+                            </div>
+                        </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+<script>
+    document.getElementById('lbsInput').addEventListener('input', function(e) {
+        let lbs = e.target.value;
+        document.getElementById('gramsOutput').innerHTML = lbs/0.0022046
+        document.getElementById('kgOutput').innerHTML = lbs/2.2046
+        document.getElementById('ouncesOutput').innerHTML = lbs*16
+    });
+    document.getElementById('kgInput').addEventListener('input', function(e) {
+        let kg = e.target.value;
+        document.getElementById('lbsOutput').innerHTML = kg*2.2046
+        document.getElementById('gramsOutput-2').innerHTML = kg*1000
+        document.getElementById('ouncesOutput-2').innerHTML = kg*35.2739
+    });
+</script>
+
+</body>
+</html>
